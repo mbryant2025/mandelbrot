@@ -1,11 +1,11 @@
 from PIL import Image
 import asyncio
 
-DIVERGENCE_ITERATIONS = 100
+DIVERGENCE_ITERATIONS = 50
 IMAGE_SIZE = 1000
 
-#Returns integer 0-99 depending on how quickly z^2 + c diverges
-#Returns 99 for convergence
+#Returns integer 0 - DIVERGENCE_ITERATIONS-1 depending on how quickly z^2 + c diverges
+#Returns DIVERGENCE_ITERATIONS-1 for convergence
 def determine_divergence(c: complex) -> int:
     z = 0
     for i in range(DIVERGENCE_ITERATIONS):
